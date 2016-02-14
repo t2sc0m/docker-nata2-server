@@ -1,4 +1,4 @@
-FROM ytnobody/ubuntu-jp
+FROM ytnobody/base:wheezy
 MAINTAINER ytnobody <ytnobody@gmail.com>
 
 RUN apt-get update && apt-get install sqlite3 mysql-client libsqlite3-dev -y --force-yes
