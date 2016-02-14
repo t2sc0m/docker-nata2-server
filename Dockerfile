@@ -1,12 +1,18 @@
 FROM ytnobody/base:wheezy
 MAINTAINER ytnobody <ytnobody@gmail.com>
 
-RUN apt-get update && apt-get install sqlite3 mysql-client libsqlite3-dev -y --force-yes
-RUN git clone https://github.com/tagomoris/xbuild.git /root/xbuild
-RUN /root/xbuild/ruby-install 2.1.4 /root/ruby-2.1
+RUN apt-get update && apt-get install sqlite3 mysql-client libsqlite3-dev bzip2 libssl-dev libreadline-dev zlib1g-dev -y --force-yes
 
+WORKDIR /opt
+RUN git clone https://github.com/rbenv/ruby-build.git
+
+WORKDIR /opt/ruby-build
+RUN ./bin/ruby-build 2.1.8 /root/ruby-2.1
 ENV PATH /root/ruby-2.1/bin:$PATH
 
+RUN gem install bundler
+
+WORKDIR /root
 RUN git clone https://github.com/studio3104/nata2.git /root/nata2
 RUN cd /root/nata2 && bundle install
 
