@@ -1,7 +1,7 @@
 FROM ytnobody/base:wheezy
 MAINTAINER ytnobody <ytnobody@gmail.com>
 
-RUN apt-get update && apt-get install sqlite3 mysql-client libsqlite3-dev bzip2 libssl-dev libreadline-dev zlib1g-dev -y --force-yes
+RUN apt-get update && apt-get install sqlite3 mysql-client libsqlite3-dev bzip2 libssl-dev libreadline-dev zlib1g-dev libmysqlclient-dev -y --force-yes
 
 WORKDIR /opt
 RUN git clone https://github.com/rbenv/ruby-build.git
