@@ -8,5 +8,5 @@ else
     echo "dburl = \"$DBURL\"" > config.toml
 fi
 
-./bin/nata2server_init_database
+# ./bin/nata2server_init_database
 bundle exec rackup

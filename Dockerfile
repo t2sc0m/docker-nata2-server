@@ -14,9 +14,6 @@ RUN gem install bundler
 
 WORKDIR /root
 RUN git clone https://github.com/studio3104/nata2.git /root/nata2
-WORKDIR /root/nata2
-RUN git checkout a7d400c030dcd66aca6ab4963eadfa511253cf83
-WORKDIR /root
 RUN cd /root/nata2 && bundle install
 
 RUN mkdir /data
