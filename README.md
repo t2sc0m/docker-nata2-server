@@ -4,12 +4,12 @@
 
 ## synopsis
 
-    $ sudo docker pull ytnobody/docker-nata2-server
+    $ sudo docker pull ytnobody/nata2-server
     $ sudo docker run \
         --name nata2 \
         -e DBURL=mysql2://nata:password@localhost/nata2 \
         -p 9292:9292 \
-        -d ytnobody/docker-nata2-server
+        -d ytnobody/nata2-server
 
 ## environment variables
 
